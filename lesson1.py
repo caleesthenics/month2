@@ -4,7 +4,7 @@ class Car:
         self.model = model
 
     def drive_to_location(self, location):
-        print(f'car {self}.model is driving to {location}')
+        print(f'car {self.model} is driving to {location}')
 
 car_honda = Car('silver', 'honda')
 
