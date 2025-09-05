@@ -10,7 +10,8 @@ class Bus(Car):
     def __init__(self, color, model, number):  # inicializator
         super().__init__(color,model)
         self.number = number
-    def new_drive_to_location(self):
+
+    def drive_to_location(self, location):
         print(f'bus {self.model} driving to geeks')
 
     def test(self):
@@ -18,4 +19,4 @@ class Bus(Car):
 
 
 bus_40 = Bus('red', 'dsada')
-bus_40.new_drive_to_location()
+bus_40.drive_to_location('kuda-to')
