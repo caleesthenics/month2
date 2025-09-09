@@ -33,4 +33,3 @@ fr = Friend('Danil', '14.06.97', 'bezrabotnii', 'False', 'Football' )
 
 for human in [cm, cm1, fr]:
     human.introduce()
-
