@@ -38,7 +38,7 @@
 
 # print(car_honda._Car__testt) #для того,чтобы посмотреть приватный атрибут (name mangling)
 
-# car_honda.color = 'green'
+# car_honda.color = 'greengig'
 
 # print(car_honda.color)
 
@@ -46,7 +46,7 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):      #абстракция (используется как шаблон для других классов,в нём ничего не реализуется)
     @abstractmethod
-    def make_sound(self)
+    def make_sound(self):
         pass
 
 class Dog(Animal):
