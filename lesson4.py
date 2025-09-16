@@ -20,4 +20,3 @@ kotopes.speak() #будет обращаться к методу speak по оч
 
 # print(CatDog.__mro__) #method resolution order
 #метод super цепляется к следующему в цепочке mro классу
-
