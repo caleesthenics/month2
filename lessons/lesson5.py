@@ -1,4 +1,6 @@
 #:QW - завершить merge при конфликте
+from lessons.lesson1 import Car
+
 class Money:
     def __init__(self, amount = 0):
         self.amount = amount
