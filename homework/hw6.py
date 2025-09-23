@@ -5,9 +5,10 @@ def checktime(func):
     def wrapper(*args, **kwargs):
         time_now = dt.now()
         print(f'start : {time_now}')
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
         time_now2 = dt.now()
         print(f'stop : {time_now2}')
+        return result
     return wrapper
 
 @checktime
