@@ -5,6 +5,6 @@ venv/
 
 __pycache__
 
-*.db
+#*.db
 *.sqlite
 *.sqlite3
