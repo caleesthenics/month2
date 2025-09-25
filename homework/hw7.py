@@ -1,10 +1,10 @@
 import sqlite3
 
 conn = sqlite3.connect('books.db')
-conn_archive = sqlite3.connect('archive_books.db')
+
 
 def create_table():
-    conn_archive.execute("""CREATE TABLE IF NOT EXISTS archive_books 
+    conn.execute("""CREATE TABLE IF NOT EXISTS archive_books 
                             (id INTEGER PRIMARY KEY AUTOINCREMENT,
                             name TEXT,
                             author TEXT,
@@ -32,9 +32,8 @@ def soft_delete_book(book_id):
     conn.execute("UPDATE books SET deleted = 1 WHERE id = ?", (book_id,))
     cursor = conn.execute("SELECT name, author, publication_year, genre, number_of_pages, number_of_copies FROM books WHERE id = ?", (book_id,))
     row = cursor.fetchone()
-    conn_archive.execute("""INSERT INTO archive_books (name, author, publication_year, genre, number_of_pages, number_of_copies) VALUES (?, ?, ?, ?, ?, ?)""", row)
+    conn.execute("""INSERT INTO archive_books (name, author, publication_year, genre, number_of_pages, number_of_copies) VALUES (?, ?, ?, ?, ?, ?)""", row)
     conn.commit()
-    conn_archive.commit()
 
 def hard_delete_book(book_id):
     cursor = conn.execute("SELECT deleted FROM books WHERE id = ?", (book_id,))
