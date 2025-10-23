@@ -20,7 +20,7 @@ def add_book(name, author, price, genre_id):
     conn.execute("INSERT INTO books (name, author, price, genre_id) VALUES (?,?,?,?)", (name, author, price, genre_id,))
     conn.commit()
 
-def add_genre(name):
+def add_genre(name)g
     conn.execute("INSERT INTO genres (name) VALUES (?)", (name,))
     conn.commit()
 
@@ -35,6 +35,9 @@ def get_books_genre():
 def get_books_price(low, high):
     result = conn.execute("SELECT books.name, genres.name, books.price FROM books JOIN genres ON books.genre_id = genres.genre_id WHERE books.price BETWEEN ? AND ?", (low, high))
     return result.fetchall()
+
+def pro4itai_pervii_bukvi_reelsov():
+    pass
 
 create_table()
 
