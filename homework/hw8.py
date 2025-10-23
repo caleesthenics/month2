@@ -1,4 +1,5 @@
 import sqlite3
+from importlib.metadata import pass_none
 
 conn = sqlite3.connect('database.db')
 
@@ -36,8 +37,6 @@ def get_books_price(low, high):
     result = conn.execute("SELECT books.name, genres.name, books.price FROM books JOIN genres ON books.genre_id = genres.genre_id WHERE books.price BETWEEN ? AND ?", (low, high))
     return result.fetchall()
 
-def pro4itai_pervii_bukvi_reelsov():
-    pass
 
 create_table()
 
